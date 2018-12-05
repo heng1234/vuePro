@@ -1,6 +1,7 @@
 <template>
     <div class="login" :style="{height:loginHeight,width:loginWidth}">
       <div class="logdiv center">
+          <div style="position: absolute;left: 34%;top: 2%;color: #409EFF;font-size: 19px">{{msgValue}}</div>
           <hlvy-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px" class="demo-dynamic form">
               <hlvy-form-item
                       prop="loginName"
@@ -42,6 +43,7 @@
                     loginPwd:'',
                     checked:true
                 },
+                msgValue:'用户名密码随便输入哦······'
 
             }
         },
@@ -51,9 +53,21 @@
         created(){
             this.wdht();
 
+            //登录添加键盘事件,注意,不能直接在焦点事件上添加回车
+            let that = this;
+            document.onkeydown = function (e) {
+                let key = window.event.keyCode;
+                if (key === 13){
+                    that.submitForm('dynamicValidateForm');
+                }
+            }
+
 
         },
         mounted(){
+            /**
+             * 记住密码从tolist拿去 判断
+             * */
             let _this = this;
             let ches = storage.get("dynamicValidateForm");
                 if(ches!=null && ches.checked){
@@ -65,6 +79,17 @@
                     _this.dynamicValidateForm.loginPwd = '';
                     _this.dynamicValidateForm.checked = false;
                 }
+
+                /**
+                 * 跑马灯效果
+                 * */
+                setInterval(function () {  //定时任务
+                    var first=_this.msgValue.substring(0,1);
+                    var end=_this.msgValue.substring(1);
+                    _this.msgValue=end+first;
+                },200);
+
+
         },
         methods:{
             wdht(){
