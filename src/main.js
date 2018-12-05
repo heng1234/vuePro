@@ -99,6 +99,24 @@ Vue.prototype.$patch=patch;
 Vue.prototype.$put=put;
 
 
+/**
+ * 登录拦截
+ */
+router.beforeEach((to, from, next) => {
+    let reg = /^\/login\/*/;
+    if (to.path == "/login") {
+        sessionStorage.removeItem("loginMsg");
+        sessionStorage.clear();
+    }
+    let userLogin = JSON.parse(sessionStorage.getItem('loginMsg'));
+//	console.log("用户名 userLogin:",userLogin)
+    if (!userLogin && !reg.exec(to.path)) {
+        next({path: '/login'})
+    } else {
+        next()
+    }
+})
+
 new Vue({
   router,
   store,

@@ -10,6 +10,7 @@
 
 <style lang="scss">
   @import "./assets/css/varuables.scss";
+  @import "./assets/css/ovflow.css";
 /*#nav {
   padding: 30px;
   a {
@@ -69,8 +70,26 @@
     -o-transform: translate(-50%,-50%);
   }
 
-  .btnColor{
-    color: $btnOne;
+  .btnLogin{
+    color: #fff;
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    background: $btnLogin;
+    border: 1px solid #dcdfe6;
+    -webkit-appearance: none;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: 0;
+    margin: 0;
+    -webkit-transition: .1s;
+    transition: .1s;
+    font-weight: 500;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 4px;
   }
 
 </style>
