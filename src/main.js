@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import hlvyLoading from '@/components/hlvyLoading.vue'
 
 
 /*自定义element标签名开始*/
@@ -66,6 +67,8 @@ const install = function(Vue, opts = {}) {
     _install(Vue, "hlvy-form-item", FormItem);
     _install(Vue, "hlvy-tabs", Tabs);
     _install(Vue, "hlvy-tab-pane", TabPane);
+    _install(Vue, "hlvy-loading", hlvyLoading);
+    _install(Vue, "hlvy-checkbox", Checkbox);
     Vue.prototype.$confirm = _confirm;
 };
 Vue.use(install);
@@ -117,6 +120,11 @@ router.beforeEach((to, from, next) => {
     }
 })
 
+/**
+ * 一键注册components下的组件
+ */
+
+import  '@/components/global.js'
 new Vue({
   router,
   store,

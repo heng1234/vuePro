@@ -21,6 +21,7 @@
                   <hlvy-input style="width: 70%" v-model="dynamicValidateForm.loginPwd"></hlvy-input>
               </hlvy-form-item>
               <hlvy-form-item>
+                  <p  class="loginp">  <hlvy-checkbox @change="check" v-model="dynamicValidateForm.checked" class="loginckd">记住密码</hlvy-checkbox></p>
                   <hlvy-button  class="loginbtn btnLogin" @click="submitForm('dynamicValidateForm')">登录</hlvy-button>
               </hlvy-form-item>
           </hlvy-form>
@@ -29,6 +30,7 @@
 </template>
 
 <script>
+    import storage from '@/storage/storage.js';
     export default {
         name: "login",
         data(){
@@ -37,14 +39,39 @@
                 loginWidth:'100%',
                 dynamicValidateForm: {
                     loginName: '',
-                    loginPwd:''
-                }
+                    loginPwd:'',
+                    checked:true
+                },
+
             }
         },
+        components:{
+            storage
+        },
         created(){
+            this.wdht();
+
+
+        },
+        mounted(){
+            let _this = this;
+            let ches = storage.get("dynamicValidateForm");
+                if(ches!=null && ches.checked){
+                    _this.dynamicValidateForm.loginName = ches.loginName
+                    _this.dynamicValidateForm.loginPwd = ches.loginPwd
+                    _this.dynamicValidateForm.checked = ches.checked;
+                }else{
+                    _this.dynamicValidateForm.loginName = '';
+                    _this.dynamicValidateForm.loginPwd = '';
+                    _this.dynamicValidateForm.checked = false;
+                }
         },
         methods:{
             wdht(){
+                /**
+                 * 拿到浏览器的高宽
+                 * @type {string}
+                 */
                 this.loginHeight = window.innerHeight+"px"
                 this.loginWidth = window.innerWidth+"px"
             },
@@ -52,6 +79,12 @@
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
                         sessionStorage.setItem("loginMsg",JSON.stringify(this.dynamicValidateForm))
+                      if(this.dynamicValidateForm.checked){
+                          storage.set("dynamicValidateForm",this.dynamicValidateForm);
+                      }else{
+                          storage.remove("dynamicValidateForm",{});
+
+                      }
                         this.$router.push({path: "/home"});
                     } else {
                         console.log('error submit!!');
@@ -59,6 +92,13 @@
                     }
                 });
             },
+            /**
+             * checkbox
+             */
+            check(){
+
+
+            }
         }
     }
 </script>
@@ -85,34 +125,56 @@
         margin-left: 10%;
     }
     .loginbtn{
-        margin-left: 22%;
-        margin-top: 6%;
+        width: 60%;
+        margin-left: 4%;
+        margin-top: 1%;
     }
+.loginckd{
+    width: 60%;
+    margin-left: 46%;
+}
 </style>
+
+/**
+* 修改登录按钮样式
+*/
 
 <style>
 
-    /**
-     * 修改登录按钮样式
-     */
     .logdiv .el-button {
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    background: #409EFF;
+    border: 1px solid #409EFF;
+    color: #fff;
+    -webkit-appearance: none;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: 0;
+    -webkit-transition: .1s;
+    transition: .1s;
+    font-weight: 500;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    }
+
+    .loginp .el-checkbox__inner {
         display: inline-block;
-        line-height: 1;
-        white-space: nowrap;
-        cursor: pointer;
-        background: #409EFF;
+        position: relative;
         border: 1px solid #409EFF;
-        color: #fff;
-        -webkit-appearance: none;
-        text-align: center;
+        border-radius: 2px;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
-        outline: 0;
-        -webkit-transition: .1s;
-        transition: .1s;
-        font-weight: 500;
-        padding: 12px 20px;
-        font-size: 14px;
-        border-radius: 4px;
+        width: 14px;
+        height: 14px;
+        background-color: #fff;
+
+        z-index: 1;
+        -webkit-transition: border-color .25s cubic-bezier(.71,-.46,.29,1.46),background-color .25s cubic-bezier(.71,-.46,.29,1.46);
+        transition: border-color .25s cubic-bezier(.71,-.46,.29,1.46),background-color .25s cubic-bezier(.71,-.46,.29,1.46);
     }
 </style>
