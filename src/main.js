@@ -20,7 +20,12 @@ import {Input,
     TabPane,
     Form,
     FormItem,
-    MessageBox} from 'element-ui';
+    MessageBox,
+    Container,
+    Aside,
+    header,
+    Main,
+} from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 // table 的样式需要手动引入
 import 'element-ui/lib/theme-chalk/icon.css'
@@ -68,12 +73,18 @@ const install = function(Vue, opts = {}) {
     _install(Vue, "hlvy-tabs", Tabs);
     _install(Vue, "hlvy-tab-pane", TabPane);
     _install(Vue, "hlvy-loading", hlvyLoading);
-    _install(Vue, "hlvy-checkbox", Checkbox);
+    _install(Vue, "hlvy-container", Container);
+    _install(Vue, "hlvy-aside", Aside);
+    _install(Vue, "hlvy-header", header);
+    _install(Vue, "hlvy-main", Main);
     Vue.prototype.$confirm = _confirm;
 };
 Vue.use(install);
 /*自定义element标签名结束*/
 
+
+import  elementUi from 'element-ui'
+Vue.use(elementUi);
 //全局过滤器文件
 import * as custom from '@/filter/filter.js'
 

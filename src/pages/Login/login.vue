@@ -1,5 +1,6 @@
 <template>
     <div class="login" :style="{height:loginHeight,width:loginWidth}">
+        <hlvy-loading :fullscreenLoading="loadingShow" :text="'登录中······'"></hlvy-loading>
       <div class="logdiv center">
           <div style="position: absolute;left: 34%;top: 2%;color: #409EFF;font-size: 19px">{{msgValue}}</div>
           <hlvy-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px" class="demo-dynamic form">
@@ -43,6 +44,7 @@
                     loginPwd:'',
                     checked:true
                 },
+                loadingShow:false,
                 msgValue:'用户名密码随便输入哦······'
 
             }
@@ -101,17 +103,20 @@
                 this.loginWidth = window.innerWidth+"px"
             },
             submitForm(formName) {
+                this.loadingShow = !this.loadingShow;
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
+
                         sessionStorage.setItem("loginMsg",JSON.stringify(this.dynamicValidateForm))
                       if(this.dynamicValidateForm.checked){
                           storage.set("dynamicValidateForm",this.dynamicValidateForm);
                       }else{
-                          storage.remove("dynamicValidateForm",{});
+                          storage.remove("dynamicValidateForm");
 
                       }
                         this.$router.push({path: "/home"});
                     } else {
+                        this.loadingShow = false;
                         console.log('error submit!!');
                         return false;
                     }

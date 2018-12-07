@@ -4,7 +4,7 @@
           class="divloding"
           v-if="fullscreenLoading"
          >
-        <p class="iconcls "></p>
+        <p class="iconcls  "></p>
         <p class="pcls center">&emsp;{{text}}</p>
 
 
@@ -66,7 +66,7 @@
 .iconcls{
   position: absolute;
   top:46%;
-  left: 50%;
+  left: 49.4%;
   transform: translate(-50%,-50%);
   -webkit-transform: translate(-50%,-50%);
   -moz-transform: translate(-50%,-50%);
