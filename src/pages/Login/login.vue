@@ -114,7 +114,7 @@
                           storage.remove("dynamicValidateForm");
 
                       }
-                        this.$router.push({path: "/home"});
+                        this.$router.push({path: "/"});
                     } else {
                         this.loadingShow = false;
                         console.log('error submit!!');

@@ -21,10 +21,6 @@ import {Input,
     Form,
     FormItem,
     MessageBox,
-    Container,
-    Aside,
-    header,
-    Main,
 } from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 // table 的样式需要手动引入
@@ -73,10 +69,7 @@ const install = function(Vue, opts = {}) {
     _install(Vue, "hlvy-tabs", Tabs);
     _install(Vue, "hlvy-tab-pane", TabPane);
     _install(Vue, "hlvy-loading", hlvyLoading);
-    _install(Vue, "hlvy-container", Container);
-    _install(Vue, "hlvy-aside", Aside);
-    _install(Vue, "hlvy-header", header);
-    _install(Vue, "hlvy-main", Main);
+    _install(Vue, "hlvy-checkbox", Checkbox);
     Vue.prototype.$confirm = _confirm;
 };
 Vue.use(install);

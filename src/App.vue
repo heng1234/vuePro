@@ -92,4 +92,42 @@
     border-radius: 4px;
   }
 
+
+
+  .content-box {
+    position: absolute;
+    left: 13%;
+    right: 0;
+    top: 70px;
+    bottom: 0;
+    padding-bottom: 30px;
+    -webkit-transition: left .3s ease-in-out;
+    transition: left .3s ease-in-out;
+    background: #f0f0f0;
+  }
+
+  .content {
+    width: auto;
+    height: 100%;
+    padding: 10px;
+    overflow-y: scroll;
+    box-sizing: border-box;
+  }
+
+  .content-collapse {
+    left: 65px;
+  }
+
+  .container {
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  .el-button--primary {
+    color: #fff;
+    background-color: rgba(64,158,255,0.8) !important;
+    border-color: rgba(64,158,255,0.8) !important;
+  }
 </style>

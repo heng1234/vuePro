@@ -4,11 +4,12 @@
 
           <el-aside >
               <div class="acccls">
-                <!--  <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
-                      <el-radio-button :label="false">展开</el-radio-button>
-                      <el-radio-button :label="true">收起</el-radio-button>
-                  </el-radio-group>-->
-                  <el-menu default-active="1-4-1" style="height: 100%" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+
+                  <el-menu default-active="1-4-1" style="height: 100%" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"
+
+                           text-color="#2b3b4b"
+                           active-text-color="#87CEFA"
+                           :collapse="isCollapse">
                       <el-submenu index="1">
                           <template slot="title">
                               <i class="el-icon-location"></i>
@@ -51,6 +52,15 @@
 
 
                       <div class="header-user-con">
+                          <div class="collapse-btn" @click="collapseChage">
+                              <i class="el-icon-menu"></i>&nbsp;
+                          </div>
+                          <div class="logo"><b>hlvy</b>&nbsp;后台管理系统</div>
+
+                  <!--                <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
+                  &lt;!&ndash;    <el-radio-button :label="false">展开</el-radio-button>
+                      <el-radio-button :label="true">收起</el-radio-button>&ndash;&gt;
+                  </el-radio-group>-->
                           <!-- 全屏显示 -->
                           <div class="btn-fullscreen" @click="handleFullScreen">
                               <el-tooltip effect="dark" :content="fullscreen?`取消全屏`:`全屏`" placement="bottom">
@@ -78,11 +88,20 @@
                       </div>
 
               </div>
+
+
               </el-header>
-              <el-main>
-
-                  <router-view></router-view>
-
+              <el-main style="margin: 0;">
+                  <div class="content-box" :class="{'content-collapse':collapse}">
+                        <tags></tags>
+                      <div class="content">
+                          <transition name="move" mode="out-in">
+                              <keep-alive :include="tagsList">
+                                  <router-view></router-view>
+                              </keep-alive>
+                          </transition>
+                      </div>
+                  </div>
               </el-main>
           </el-container>
       </el-container>
@@ -92,14 +111,20 @@
 </template>
 
 <script>
-
+import tags from  '@/components/tags.vue';
+import bus from  '@/components/bus.js';
 export default {
   name: 'home',
+    components:{
+        tags
+    },
     data(){
       return{
           sessionData:[],
           fullscreen: false,
-          isCollapse: false
+          isCollapse: false,
+          tagsList: [],
+          collapse: false
       }
     },
     methods:{
@@ -112,8 +137,7 @@ export default {
         },
         // 侧边栏折叠
         collapseChage(){
-            this.collapse = !this.collapse;
-            bus.$emit('collapse', this.collapse);
+            this.isCollapse = !this.isCollapse;
         },
         // 全屏事件
         handleFullScreen(){
@@ -151,9 +175,21 @@ export default {
     },
     created(){
       this.sessionData =  JSON.parse(sessionStorage.getItem("loginMsg"));
+
+        bus.$on('collapse', msg => {
+            this.collapse = msg;
+        })
+
+        // 只有在标签页列表里的页面才使用keep-alive，即关闭标签之后就不保存到内存中了。
+        bus.$on('tags', msg => {
+            let arr = [];
+            for(let i = 0, len = msg.length; i < len; i ++){
+                msg[i].name && arr.push(msg[i].name);
+            }
+            this.tagsList = arr;
+        })
     },
-  components: {
-  }
+
 }
 </script>
 <style scoped>
@@ -170,6 +206,24 @@ export default {
         height: 70px;
         background-color: rgba(64,158,255,0.8);
     }
+    .headercls .collapse-btn{
+        color: #fff;
+        float: left;
+        cursor: pointer;
+        margin-top: 1.2%;
+        margin-left: 1%;
+        font-size: 22px;
+    }
+    .headercls .logo{
+        color: #fff;
+        float: left;
+        width:250px;
+        margin-top: 1.2%;
+        font-size: 22px;
+    }
+    .headercls .logo>b{
+        font-family: 华文隶书;
+    }
     .acccls{
         position: absolute;
         top: 10%;
@@ -180,13 +234,15 @@ export default {
 
     .user-name{
         position: absolute;
-       top:30px;
+       top:27px;
+
         left: 90%;
     }
     .user-avator{
         display: inline-block;
-        margin-left: 87%;
-        margin-top: -15px;
+        float: right;
+        margin-right:11%;
+        margin-top: -16px;
     }
     .user-avator img{
         display: block;
