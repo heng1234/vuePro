@@ -103,7 +103,7 @@
         overflow: hidden;
         background: #fff;
         padding-right: 120px;
-        box-shadow: 0 5px 10px #ddd;
+        /*box-shadow: 0 5px 10px #ddd;*/
     }
 
     .tags ul {
@@ -135,9 +135,7 @@
         background: #f8f8f8;
     }
 
-    .tags-li.active {
-        color: #fff;
-    }
+
 
     .tags-li-title {
         float: left;
@@ -148,9 +146,13 @@
         margin-right: 5px;
         color: #666!important;
     }
+    .tags-li.active {
 
+        border: 1px solid rgba(64,158,255,0.8);
+        background-color: rgba(64,158,255,0.8);
+    }
     .tags-li.active .tags-li-title {
-        color: #fff;
+        color: rgb(255,255,255)!important;
     }
 
     .tags-close-box {

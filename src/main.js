@@ -3,8 +3,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import hlvyLoading from '@/components/hlvyLoading.vue'
-
-
+import  'lib-flexible'//自适应插件
+import './assets/icon/iconfont.css';
+import './assets/icon/demo.css';
 /*自定义element标签名开始*/
 import {Input,
     Button,

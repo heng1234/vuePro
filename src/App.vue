@@ -130,4 +130,9 @@
     background-color: rgba(64,158,255,0.8) !important;
     border-color: rgba(64,158,255,0.8) !important;
   }
+/*  .el-menu-item:focus, .el-menu-item:hover,.el-submenu__title:hover  {
+    outline: 0;
+    background-color: #ecf5ff!important;
+  }*/
+
 </style>

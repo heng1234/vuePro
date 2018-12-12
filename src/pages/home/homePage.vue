@@ -1,5 +1,6 @@
 <template>
     <div>
+        <i class="iconfont hlvy-icon-jiaowu"></i>
         主页
 
     </div>

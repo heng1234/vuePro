@@ -1,50 +1,15 @@
 <template>
   <div class="home">
-      <el-container>
 
-          <el-aside >
-              <div class="acccls">
-
-                  <el-menu default-active="1-4-1" style="height: 100%" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"
-
-                           text-color="#2b3b4b"
-                           active-text-color="#87CEFA"
-                           :collapse="isCollapse">
-                      <el-submenu index="1">
-                          <template slot="title">
-                              <i class="el-icon-location"></i>
-                              <span slot="title">导航一</span>
-                          </template>
-                          <el-menu-item-group>
-                              <span slot="title">分组一</span>
-                              <el-menu-item index="1-1">选项1</el-menu-item>
-                              <el-menu-item index="1-2">选项2</el-menu-item>
-                          </el-menu-item-group>
-                          <el-menu-item-group title="分组2">
-                              <el-menu-item index="1-3">选项3</el-menu-item>
-                          </el-menu-item-group>
-                          <el-submenu index="1-4">
-                              <span slot="title">选项4</span>
-                              <el-menu-item index="1-4-1">选项1</el-menu-item>
-                          </el-submenu>
-                      </el-submenu>
-                      <el-menu-item index="2">
-                          <i class="el-icon-menu"></i>
-                          <span slot="title">导航二</span>
-                      </el-menu-item>
-                      <el-menu-item index="3" disabled>
-                          <i class="el-icon-document"></i>
-                          <span slot="title">导航三</span>
-                      </el-menu-item>
-                      <el-menu-item index="4">
-                          <i class="el-icon-setting"></i>
-                          <span slot="title">导航四</span>
-                      </el-menu-item>
-                  </el-menu>
-
-
-              </div>
-          </el-aside>
+          <el-container>
+<div style="height: 100%;width: 100%;">
+    <el-aside >
+        <div class="acccls">
+            <acccls></acccls>
+        </div>
+    </el-aside>
+</div>
+          </el-container>
           <el-container>
               <!--header-->
               <el-header>
@@ -91,7 +56,7 @@
 
 
               </el-header>
-              <el-main style="margin: 0;">
+              <el-main style="margin: 0;height: 100%">
                   <div class="content-box" :class="{'content-collapse':collapse}">
                         <tags></tags>
                       <div class="content">
@@ -104,7 +69,6 @@
                   </div>
               </el-main>
           </el-container>
-      </el-container>
 
 
   </div>
@@ -113,9 +77,11 @@
 <script>
 import tags from  '@/components/tags.vue';
 import bus from  '@/components/bus.js';
+import Acccls from "../components/acccls";
 export default {
   name: 'home',
     components:{
+        Acccls,
         tags
     },
     data(){
@@ -192,9 +158,11 @@ export default {
 
 }
 </script>
+
 <style scoped>
     .home{
         position: relative;
+        top: 0;
         width: 100%;
         height: 100%;
     }
@@ -204,14 +172,14 @@ export default {
         left: 0%;
         width: 100%;
         height: 70px;
-        background-color: rgba(64,158,255,0.8);
+        background-color: rgba(90,179,255,1);
     }
     .headercls .collapse-btn{
         color: #fff;
         float: left;
         cursor: pointer;
-        margin-top: 1.2%;
-        margin-left: 1%;
+        margin-top: 12px;
+        margin-left: 10px;
         font-size: 22px;
     }
     .headercls .logo{
@@ -226,9 +194,8 @@ export default {
     }
     .acccls{
         position: absolute;
-        top: 10%;
-        height: 90%;
-        width: 200px;
+        height:100%;
+        width: 100%;
     }
 
 

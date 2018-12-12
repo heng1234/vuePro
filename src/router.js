@@ -35,6 +35,14 @@ export default new Router({
                   keepAlive: false, // 不需要被缓存
                   title: '首页'
               },
+          },
+              {
+              path: '/test',
+              component: resolve => require(['@/pages/test.vue'], resolve),//
+              meta: {
+                  keepAlive: false, // 不需要被缓存
+                  title: 'test'
+              },
           }
           ]
       }
