@@ -2,7 +2,7 @@
     <div class="login" :style="{height:loginHeight,width:loginWidth}">
         <hlvy-loading :fullscreenLoading="loadingShow" :text="'登录中······'"></hlvy-loading>
       <div class="logdiv center">
-          <div style="position: absolute;left: 34%;top: 2%;color: #409EFF;font-size: 19px">{{msgValue}}</div>
+          <marquee style="position: absolute;left: 0%;top: 2%;color: #409EFF;font-size: 19px">{{msgValue}}</marquee>
           <hlvy-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px" class="demo-dynamic form">
               <hlvy-form-item
                       prop="loginName"
@@ -20,7 +20,7 @@
       required: true, message: '密码不能为空', trigger: 'blur'
     }"
               >
-                  <hlvy-input style="width: 70%" v-model="dynamicValidateForm.loginPwd"></hlvy-input>
+                  <hlvy-input style="width: 70%" type="password" v-model="dynamicValidateForm.loginPwd"></hlvy-input>
               </hlvy-form-item>
               <hlvy-form-item>
                   <p  class="loginp">  <hlvy-checkbox @change="check" v-model="dynamicValidateForm.checked" class="loginckd">记住密码</hlvy-checkbox></p>
@@ -82,14 +82,14 @@
                     _this.dynamicValidateForm.checked = false;
                 }
 
-                /**
+            /*    /!**
                  * 跑马灯效果
-                 * */
+                 * *!/
                 setInterval(function () {  //定时任务
                     var first=_this.msgValue.substring(0,1);
                     var end=_this.msgValue.substring(1);
                     _this.msgValue=end+first;
-                },200);
+                },200);*/
 
 
         },
