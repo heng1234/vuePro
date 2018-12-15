@@ -11,9 +11,11 @@
                        <div >
 
                            <el-select
-                                   placeholder="请选择文章标签">
+                                   v-model="sex"
+                                   placeholder="性别"
+                           @change="sexchhange">
                                <el-option
-                                       v-for="item in options5"
+                                       v-for="item in sexs"
                                        :key="item.value"
                                        :label="item.label"
                                        :value="item.value">
@@ -23,9 +25,9 @@
                        </div>
                    </el-col>
                    <el-col :span="8" :pull="0">
-                       <el-input placeholder="请输入内容" class="el-input__inner_search ">
+                       <el-input placeholder="姓名" v-model="name" class="el-input__inner_search ">
 
-                           <el-button slot="append" icon="el-icon-search" class="search-el-button"   ></el-button>
+                           <el-button slot="append" @click="getData" icon="el-icon-search" class="search-el-button"   ></el-button>
                        </el-input>
                    </el-col>
                </el-row>
@@ -37,7 +39,7 @@
                     border
                     tooltip-effect="dark"
                     style="width: 100%;text-align: center;margin-top: 10px"
-                    @selection-change="handleSelectionChange">
+                    ><!--@selection-change="handleSelectionChange"-->
                 <el-table-column
                         type="selection"
                         width="55">
@@ -62,6 +64,7 @@
                         prop="sex"
                         label="性别"
                         show-overflow-tooltip>
+                    <template slot-scope="scope">{{ scope.row.sex|sex }}</template>
                 </el-table-column>
                 <el-table-column
                         prop="age"
@@ -85,7 +88,7 @@
 
         </template>
         <p class="tablep">
-            <hlvy-page :pageSize="pageSize" :sumCount="sumCount" :currPage="currPage" ></hlvy-page>
+            <hlvy-page :pageSize="pageSize" :sumCount="sumCount" :currPage="currPage"   v-on:handleSizeChange="handleSizeChange"></hlvy-page>
         </p>
 
     </div>
@@ -93,6 +96,7 @@
 
 <script>
     import HlvyTitle from "../components/hlvyTitle";
+    const List = []
     export default {
         name: "test",
         components: {HlvyTitle},
@@ -100,37 +104,89 @@
             return {
                 currPage:1,//当前页码
                 pageSize: 7,//每页显示
-                sumCount:  1000,//总数量
+                sumCount:  0,//总数量
                 tableData3:[],
-                multipleSelection: []
+                multipleSelection: [],
+                name:'',
+                sexs:[{
+                    label:'男',
+                    value:'1'
+                },{
+                    label:'女',
+                    value:'2'
+                }],
+                sex:''
+            }
+        },
+        created(){
+            const count = 100
+            this.sumCount=count;
+            for (let i = 0; i < count; i++) {
+                List.push(this.$mock.mock({
+                    id: this.$mock.Random.guid(),
+                    name: this.$mock.Random.cname(),
+                    addr: this.$mock.mock('@county(true)'),
+                    'age|18-60': 1,
+                    birth: this.$mock.Random.date(),
+                    sex: this.$mock.Random.integer(0, 1)
+                }))
             }
         },
         mounted(){
+
             this.getData();
         },
         methods:{
-            getData(){
-            /*    this.$post("http://table.cn")
-                    .then((response) => {
-                        alert(JSON.stringify(response))
-                    })
-                    .catch(res => {
-                        console.log(res);
-                    });*/
-                let List = []
-                const count = 60
+            handleSizeChange(val) {
+                this.currPage = val.currPage;
+                this.pageSize = val.pageSize;
+                 this.getData();
+            },
+            sexchhange(){
 
-                for (let i = 0; i < count; i++) {
-                    List.push(this.$mock.mock({
-                        id: this.$mock.Random.guid(),
-                        name: this.$mock.Random.cname(),
-                        addr: this.$mock.mock('@county(true)'),
-                        'age|18-60': 1,
-                        birth: this.$mock.Random.date(),
-                        sex: this.$mock.Random.integer(0, 1)
-                    }))
+                this.getData();
+            },
+            /**
+             * 查询功能
+             */
+            getData(){
+
+                if(this.name != null && this.name.trim() !='' || this.sex){
+                let [ name, page = this.currPage, limit = this.pageSize ] =[this.name,,];
+                const mockList = List.filter(user => {
+                    if (name && user.name.indexOf(name) === -1) return false
+                    return true
+                })
+                    const pageList = mockList.filter((item, index) => index < limit * page && index >= limit * (page - 1))
+                    if (this.sex != '') {
+                        const mockListsex = mockList.filter(user => {
+                            if (this.sex.toString()  !== user.sex.toString()) return false
+                            return true
+                        })
+                            const pageList = mockListsex.filter((item, index) => index < this.pageSize * this.currPage && index >= this.pageSize * (this.currPage - 1))
+
+                            this.tableData3 = pageList;
+                            return;
+                    }
+
+
+
+                    /*
+                return {
+                    code: 0,
+                    data: {
+                        total: mockList.length,
+                        users: pageList
+                    }
+                }*/
+
+               this.tableData3 = pageList;
+
+                }else{
+                    const pageList = List.filter((item, index) => index < this.pageSize * this.currPage && index >= this.pageSize * (this.currPage - 1))
+
+                    this.tableData3 = pageList;
                 }
-               this.tableData3 = List;
             }
         }
     }

@@ -63,6 +63,10 @@ Vue.use(Vuex);
 
   }
 
+  let sex =val =>{
+    return val.toString()==='1'?'男':'女';
+  }
+
 //定义下全局过滤器  往 {}里面加 逗号隔开
-export  {moneyFormat,fmtResult,fmtFloat}
+export  {moneyFormat,fmtResult,fmtFloat,sex}
 

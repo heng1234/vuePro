@@ -23,7 +23,6 @@
 export default {
     data(){
         return{
-          pageSize:7
         }
     },
   /*props: ['pageSize','sumCount','currPage'],*/
@@ -64,5 +63,10 @@ export default {
     color: #2b3b4b!important;
     min-width: 30px;
     border-radius: 2px;
+  }
+  .page .el-pagination.is-background .el-pager li:hover,
+  .page .el-pagination.is-background .el-pager li.active {
+    background-color: #409EFF!important;
+    color: #fff!important;
   }
 </style>
