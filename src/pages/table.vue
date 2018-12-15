@@ -43,9 +43,10 @@
                         width="55">
                 </el-table-column>
                 <el-table-column
-                        label="日期"
-                        width="120">
-                    <template slot-scope="scope">{{ scope.row.date }}</template>
+                        label="id"
+                        :show-overflow-tooltip='true'
+                       >
+                    <template slot-scope="scope">{{ scope.row.id }}</template>
                 </el-table-column>
                 <el-table-column
                         prop="name"
@@ -53,8 +54,23 @@
                         width="120">
                 </el-table-column>
                 <el-table-column
-                        prop="address"
+                        prop="addr"
                         label="地址"
+                        show-overflow-tooltip>
+                </el-table-column>
+                <el-table-column
+                        prop="sex"
+                        label="性别"
+                        show-overflow-tooltip>
+                </el-table-column>
+                <el-table-column
+                        prop="age"
+                        label="年龄"
+                        show-overflow-tooltip>
+                </el-table-column>
+                <el-table-column
+                        prop="birth"
+                        label="生日"
                         show-overflow-tooltip>
                 </el-table-column>
                 <el-table-column
@@ -85,35 +101,7 @@
                 currPage:1,//当前页码
                 pageSize: 7,//每页显示
                 sumCount:  1000,//总数量
-                tableData3: [{
-                    date: '2016-05-03',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                }, {
-                    date: '2016-05-02',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                }, {
-                    date: '2016-05-04',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                }, {
-                    date: '2016-05-01',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                }, {
-                    date: '2016-05-08',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                }, {
-                    date: '2016-05-06',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                }, {
-                    date: '2016-05-07',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                }],
+                tableData3:[],
                 multipleSelection: []
             }
         },
@@ -121,28 +109,29 @@
             this.getData();
         },
         methods:{
-       /*     let List = []
-            const count = 60
-
-            for (let i = 0; i < count; i++) {
-        List.push(Mock.mock({
-            id: Mock.Random.guid(),
-            name: Mock.Random.cname(),
-            addr: Mock.mock('@county(true)'),
-            'age|18-60': 1,
-            birth: Mock.Random.date(),
-            sex: Mock.Random.integer(0, 1)
-        }))
-    }*/
-      /*      getData(){
-                this.$post("http://table.cn")
+            getData(){
+            /*    this.$post("http://table.cn")
                     .then((response) => {
                         alert(JSON.stringify(response))
                     })
                     .catch(res => {
                         console.log(res);
-                    });
-            }*/
+                    });*/
+                let List = []
+                const count = 60
+
+                for (let i = 0; i < count; i++) {
+                    List.push(this.$mock.mock({
+                        id: this.$mock.Random.guid(),
+                        name: this.$mock.Random.cname(),
+                        addr: this.$mock.mock('@county(true)'),
+                        'age|18-60': 1,
+                        birth: this.$mock.Random.date(),
+                        sex: this.$mock.Random.integer(0, 1)
+                    }))
+                }
+               this.tableData3 = List;
+            }
         }
     }
 </script>

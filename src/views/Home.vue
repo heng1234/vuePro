@@ -28,7 +28,7 @@
                   </el-radio-group>-->
                           <!-- 全屏显示 -->
                           <div class="btn-fullscreen" @click="handleFullScreen">
-                              <el-tooltip effect="dark" :content="fullscreen?`取消全屏`:`全屏`" placement="bottom">
+                              <el-tooltip  class="fullcls" effect="dark" :content="fullscreen?`取消全屏`:`全屏`" placement="bottom">
                                   <i class="el-icon-rank"></i>
                               </el-tooltip>
                           </div>
@@ -178,7 +178,7 @@ export default {
         color: #fff;
         float: left;
         cursor: pointer;
-        margin-top: 17px;
+        margin-top: 12px;
         margin-left: 10px;
         font-size: 22px;
     }
@@ -186,7 +186,7 @@ export default {
         color: #fff;
         float: left;
         width:250px;
-        margin-top: 17px;
+        margin-top: 10px;
         font-size: 22px;
     }
     .headercls .logo>b{
@@ -209,7 +209,7 @@ export default {
         display: inline-block;
         float: right;
         margin-right:11%;
-        margin-top: -16px;
+        margin-top: -22px;
     }
     .user-avator img{
         display: block;
@@ -222,8 +222,21 @@ export default {
         cursor: pointer;
     }
     .btn-fullscreen{
-        transform: rotate(45deg);
+        position: relative;
+        height: 40px;
+        width: 40px;
+        left: 97%;
+        top: -5px;
         margin-right: 5px;
         font-size: 24px;
+        transform: rotate(47deg);
+        color: #fff;
+    }
+    .btn-fullscreen .fullcls{
+        border: 2px solid #fff;
+    }
+    .btn-fullscreen .fullcls:hover{
+        border: 2px solid #fff;
+        cursor: pointer;
     }
 </style>

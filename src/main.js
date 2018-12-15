@@ -10,7 +10,6 @@ import pagination from '@/components/pagination.vue';
 import hlvyTitle from '@/components/hlvyTitle.vue';
 /*自定义element标签名开始*/
 import Mock from "mockjs";
-Vue.use(Mock);
 import {Input,
     Button,
     Radio,
@@ -111,6 +110,7 @@ Vue.prototype.$post=post;
 Vue.prototype.$fetch=fetch;
 Vue.prototype.$patch=patch;
 Vue.prototype.$put=put;
+Vue.prototype.$mock=Mock;
 
 
 /**
