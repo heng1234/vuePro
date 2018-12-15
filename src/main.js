@@ -6,7 +6,11 @@ import hlvyLoading from '@/components/hlvyLoading.vue'
 import  'lib-flexible'//自适应插件
 import './assets/icon/iconfont.css';
 import './assets/icon/demo.css';
+import pagination from '@/components/pagination.vue';
+import hlvyTitle from '@/components/hlvyTitle.vue';
 /*自定义element标签名开始*/
+import Mock from "mockjs";
+Vue.use(Mock);
 import {Input,
     Button,
     Radio,
@@ -71,6 +75,8 @@ const install = function(Vue, opts = {}) {
     _install(Vue, "hlvy-tab-pane", TabPane);
     _install(Vue, "hlvy-loading", hlvyLoading);
     _install(Vue, "hlvy-checkbox", Checkbox);
+    _install(Vue, "hlvy-page", pagination);
+    _install(Vue, "hlvy-title", hlvyTitle);
     Vue.prototype.$confirm = _confirm;
 };
 Vue.use(install);

@@ -47,8 +47,8 @@
                     },
                     {
                         icon: 'iconfont hlvy-icon-xueyuanguanliicon-',
-                        index: 'test',
-                        title: 'test'
+                        index: 'table',
+                        title: 'table'
                     },
                     {
                         icon: 'iconfont hlvy-icon-paikeguanliicon-',

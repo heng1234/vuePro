@@ -9,6 +9,8 @@
 </template>
 
 <style lang="scss">
+  /*引入无须编译的css文件*/
+  @import './assets/css/oscss.css';
   @import "./assets/css/varuables.scss";
   @import "./assets/css/ovflow.css";
 /*#nav {
@@ -103,7 +105,7 @@
     padding-bottom: 30px;
     -webkit-transition: left .3s ease-in-out;
     transition: left .3s ease-in-out;
-    background: #f0f0f0;
+    background: rgba(252,252,255,1);
   }
 
   .content {
@@ -130,6 +132,21 @@
     background-color: rgba(64,158,255,0.8) !important;
     border-color: rgba(64,158,255,0.8) !important;
   }
+
+
+  /*红色* 必填项*/
+  b.require{
+    color: #FF0000;
+  }
+  #app .input-error:after{
+    content:"*请输入有效合法的内容！";
+    color: #FF0000;
+  }
+  .el-date-editor.el-input,.el-date-editor.el-input__inner{
+    width: 60% !important;
+  }
+
+
 /*  .el-menu-item:focus, .el-menu-item:hover,.el-submenu__title:hover  {
     outline: 0;
     background-color: #ecf5ff!important;

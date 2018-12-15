@@ -56,7 +56,7 @@
 
 
               </el-header>
-              <el-main style="margin: 0;height: 100%">
+              <el-main style="margin: 0;height: 100%;">
                   <div class="content-box" :class="{'content-collapse':collapse}">
                         <tags></tags>
                       <div class="content">
@@ -178,7 +178,7 @@ export default {
         color: #fff;
         float: left;
         cursor: pointer;
-        margin-top: 12px;
+        margin-top: 17px;
         margin-left: 10px;
         font-size: 22px;
     }
@@ -186,7 +186,7 @@ export default {
         color: #fff;
         float: left;
         width:250px;
-        margin-top: 1.2%;
+        margin-top: 17px;
         font-size: 22px;
     }
     .headercls .logo>b{

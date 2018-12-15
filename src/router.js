@@ -37,11 +37,11 @@ export default new Router({
               },
           },
               {
-              path: '/test',
-              component: resolve => require(['@/pages/test.vue'], resolve),//
+              path: '/table',
+              component: resolve => require(['@/pages/table.vue'], resolve),//
               meta: {
                   keepAlive: false, // 不需要被缓存
-                  title: 'test'
+                  title: 'element-ui表格'
               },
           }
           ]
