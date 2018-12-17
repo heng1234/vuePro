@@ -4,8 +4,8 @@ import router from './router'
 import store from './store'
 import hlvyLoading from '@/components/hlvyLoading.vue'
 import  'lib-flexible'//自适应插件
-import './assets/icon/iconfont.css';
-import './assets/icon/demo.css';
+import '@/assets/icon/iconfont.css';
+import '@/assets/icon/demo.css';
 /*分页页码*/
 import pagination from '@/components/pagination.vue';
 /*标题*/

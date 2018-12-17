@@ -6,7 +6,7 @@ module.exports = {
     // 指定子路径。比如，如果你的应用部署在
     // https://www.foobar.com/my-app/
     // 那么将这个值改为 `/my-app/`
-    baseUrl: './',
+    baseUrl: '/vuePro/dist/',
 
     // 将构建好的文件输出到哪里
     outputDir: 'dist',
