@@ -82,10 +82,21 @@ module.exports = {
                 // @/ 是 src/ 的别名
                 // 所以这里假设你有 `src/assets/css/varuables.scss` 这个文件
                 data: `@import "@/assets/css/varuables.scss";`
+            },
+            /*自适应*/
+            postcss: {
+                // 这是rem适配的配置  注意： remUnit在这里要根据lib-flexible的规则来配制，如果您的设计稿是750px的，用75就刚刚好。
+                plugins: [
+                    require("postcss-px2rem")({
+                        remUnit: 75
+                    })
+                ]
             }
-        }
+        },
+
     },
-    // 三方插件的选项
+
+    // 第三方插件的选项
     pluginOptions: {
         // ...
     }

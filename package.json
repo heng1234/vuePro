@@ -9,7 +9,10 @@
   "dependencies": {
     "axios": "^0.18.0",
     "element-ui": "^2.4.11",
+    "lib-flexible": "^0.3.2",
     "mockjs": "^1.0.1-beta3",
+    "postcss-px2rem": "^0.3.0",
+    "postcss-pxtorem": "^4.0.1",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
@@ -18,6 +21,7 @@
     "@vue/cli-plugin-babel": "^3.1.1",
     "@vue/cli-service": "^3.1.4",
     "node-sass": "^4.9.0",
+    "postcss-px2rem": "^0.3.0",
     "sass-loader": "^7.0.1",
     "vue-template-compiler": "^2.5.17"
   }
