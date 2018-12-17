@@ -6,8 +6,12 @@ import hlvyLoading from '@/components/hlvyLoading.vue'
 import  'lib-flexible'//自适应插件
 import './assets/icon/iconfont.css';
 import './assets/icon/demo.css';
+/*分页页码*/
 import pagination from '@/components/pagination.vue';
+/*标题*/
 import hlvyTitle from '@/components/hlvyTitle.vue';
+/*模态框*/
+import hlvyDia from '@/components/hlvyDia.vue';
 /*自定义element标签名开始*/
 import Mock from "mockjs";
 import {Input,
@@ -50,7 +54,7 @@ function _confirm(message, fok, fcancel) {
     MessageBox.confirm(message, '确认', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
-        type: 'warning'
+      //  type: 'warning'
     }).then(() => {
         if(fok) {
             fok();
@@ -76,6 +80,7 @@ const install = function(Vue, opts = {}) {
     _install(Vue, "hlvy-checkbox", Checkbox);
     _install(Vue, "hlvy-page", pagination);
     _install(Vue, "hlvy-title", hlvyTitle);
+    _install(Vue, "hlvy-dia", hlvyDia);
     Vue.prototype.$confirm = _confirm;
 };
 Vue.use(install);

@@ -5,7 +5,6 @@
     <el-pagination
       background
       layout="prev, pager, next,slot"
-      @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
       :current-page.sync="currPage"
       :total="sumCount">
@@ -52,6 +51,12 @@ export default {
     },
 
   },
+    watch:{
+        currPage:function () {
+            this.$emit('handleSizeChange', {pageSize:this.pageSize,sumCount:this.sumCount,currPage:this.currPage})
+
+        }
+    }
 
 }
 </script>

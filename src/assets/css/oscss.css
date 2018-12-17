@@ -366,3 +366,17 @@ input:focus {
 .el-icon-arrow-up:before {
   content: "\25b2";!*css图标*!
 }*/
+/**
+ table页码
+ */
+.pagination{
+  margin-top:17.9px;
+  font-family: 微软雅黑;
+  font-size: 16px;
+  text-align: center;
+  position: relative;
+}
+.pagination span{
+  position: absolute;
+  left: 0%;
+}
