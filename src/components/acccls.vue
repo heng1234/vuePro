@@ -52,13 +52,13 @@
                     },
                     {
                         icon: 'iconfont hlvy-icon-paikeguanliicon-',
-                        index: 'tabs',
-                        title: 'tab选项卡'
+                        index: 'datepaick',
+                        title: '日历本'
                     },
                     {
                         icon: 'iconfont hlvy-icon-jiaowu',
-                        index: '3',
-                        title: '表单相关',
+                        index: 'element-ui',
+                        title: 'element-ui',
                         subs: [
                             {
                                 index: 'form',
@@ -86,8 +86,8 @@
                     },
                     {
                         icon: 'iconfont hlvy-icon-jiaoyan',
-                        index: 'icon',
-                        title: '自定义图标'
+                        index: 'testkey',
+                        title: '键盘'
                     },
                     {
                         icon: 'iconfont hlvy-icon-chuqinpingjiaicon-',

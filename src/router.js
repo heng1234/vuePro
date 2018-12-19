@@ -43,6 +43,22 @@ export default new Router({
                   keepAlive: false, // 不需要被缓存
                   title: 'element-ui表格'
               },
+          },
+              {
+              path: '/datepaick',
+              component: resolve => require(['@/pages/datadk/datepaick.vue'], resolve),//
+              meta: {
+                  keepAlive: false, // 不需要被缓存
+                  title: '日历本'
+              },
+          },
+              {
+              path: '/testkey',
+              component: resolve => require(['@/pages/keyborad/testKeyborard.vue'], resolve),//
+              meta: {
+                  keepAlive: false, // 不需要被缓存
+                  title: '键盘'
+              },
           }
           ]
       }
