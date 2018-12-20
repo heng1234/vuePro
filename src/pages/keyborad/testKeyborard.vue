@@ -1,11 +1,14 @@
 <style lang="scss" scoped>
     .zywjp{
-        float: left!important;
-        margin: -17.4% 0 0 8.2%;
+
+        position: absolute;
+        top: 36px;
+        right: 47%;
         font-family: Verdana, Sans-Serif;
 
         h1 {
             color: rgb(90,179,255);
+            margin-left: 60px;
             font-weight: bold;
 
         }
@@ -41,7 +44,10 @@
     }
 </style>
 <template>
-    <div>
+    <div style="position: relative">
+        <div>
+            <hlvy-title :text="'键盘'" :icon="'iconfont hlvy-icon-xueyuanguanliicon-'"></hlvy-title>
+        </div>
     <div id="testKeyborderd">
         <h1>数字英文键盘:</h1>
         <textarea type="text" v-focus v-model="keyboardText"></textarea>
@@ -49,7 +55,7 @@
     </div>
         <div style="float: right" class="zywjp">
             <h1>中英文键盘:</h1>
-            <keyipt :placeholder="value" :textValue="value" style="color: rgb(135, 135, 135);"  :topPx="'61px'" :leftPx="'42.2%'" @getSearchValue="getKeyValue"></keyipt>
+            <keyipt :placeholder="value" :textValue="value" style="color: rgb(135, 135, 135);"  :topPx="'12px'" :leftPx="'42.2%'" @getSearchValue="getKeyValue"></keyipt>
         </div>
     </div>
 </template>

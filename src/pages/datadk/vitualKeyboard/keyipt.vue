@@ -1,5 +1,5 @@
 <template>
-  <div class="vitualKeyboard" >
+  <div class="vitualKeyboard" style="position: relative" >
       <div class="search" :style="{top:topPx,left:leftPx}">
           <textarea name="inputArea" type="text"  style="background-color: #ffffff;border:1px solid  #ccc;width: 523px;height: 73px" id="inputArea"  :placeholder="placeholder" v-model="value"></textarea>
       </div>
@@ -482,8 +482,8 @@ input[type="button"] {
   width: 708px;
   height: 310px;
   margin: 0;
-    right: 6.2rem;
-    top: 2.49rem;
+    right: -8.52rem;
+    top: 1.6rem;
   padding: 10px;
   z-index: 2018;
   background:rgb(90,179,255);

@@ -1,8 +1,9 @@
 <template>
     <div class="acccls">
-        <el-menu class="sidebar-el-menu" :default-active="onRoutes" :collapse="collapse"
+        <el-menu class="sidebar-el-menu " :default-active="onRoutes"  :collapse="collapse"
                  background-color="#2b3b4b"
                  text-color="rgb(255,255,255)"
+                 style="width: 12.9%"
                  active-text-color="rgba(102,175,255)" unique-opened router>
             <template v-for="item in items">
                 <template v-if="item.subs">
@@ -69,7 +70,7 @@
                                 title: '三级菜单',
                                 subs: [
                                     {
-                                        index: 'editor',
+                                        index: 'vueEdito',
                                         title: '富文本编辑器'
                                     },
                                     {
@@ -79,7 +80,7 @@
                                 ]
                             },
                             {
-                                index: 'upload',
+                                index: 'elupload',
                                 title: '文件上传'
                             }
                         ]
@@ -154,4 +155,8 @@
         height:100%;
     }
     .tophome{margin-top: 70px}
+  /*  .tophome:after{
+        margin-left: 6%;
+        content: "(" attr(href) ")";
+    }*/
 </style>

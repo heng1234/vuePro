@@ -59,7 +59,37 @@ export default new Router({
                   keepAlive: false, // 不需要被缓存
                   title: '键盘'
               },
-          }
+          },
+              {
+              path: '/form',
+              component: resolve => require(['@/pages/emenent-ui/form.vue'], resolve),//
+              meta: {
+                  keepAlive: false, // 不需要被缓存
+                  title: 'form表单'
+              },
+          },
+              {
+                  path: '/vueEdito',
+                  component: resolve => require(['@/pages/VueEditor/VueEdito.vue'], resolve),//
+                  meta: {
+                      keepAlive: false, // 不需要被缓存
+                      title: '富文本编辑器'
+                  },
+              },{
+                  path: '/markdown',
+                  component: resolve => require(['@/pages/VueEditor/markdown.vue'], resolve),//
+                  meta: {
+                      keepAlive: false, // 不需要被缓存
+                      title: 'markdown编辑器'
+                  },
+              },{
+                  path: '/elupload',
+                  component: resolve => require(['@/pages/upload/elupload.vue'], resolve),//
+                  meta: {
+                      keepAlive: false, // 不需要被缓存
+                      title: '文件上传'
+                  },
+              },
           ]
       }
 

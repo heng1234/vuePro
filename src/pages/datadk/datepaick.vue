@@ -1,5 +1,8 @@
 <template>
     <div id="datepaick">
+        <div>
+            <hlvy-title :text="'日历本'" :icon="'iconfont hlvy-icon-xueyuanguanliicon-'"></hlvy-title>
+        </div>
         <div class="flex">
             <div>
                 <span>弹出框</span>
