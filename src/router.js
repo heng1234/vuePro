@@ -90,6 +90,31 @@ export default new Router({
                       title: '文件上传'
                   },
               },
+              {
+                  path: '/404',
+                  component: resolve => require(['@/pages/error/404.vue'], resolve),//
+                  meta: {
+                      keepAlive: false, // 不需要被缓存
+                      title: '404'
+                  },
+              },
+              {
+                  path: '/btn',
+                  component: resolve => require(['@/pages/button/btn.vue'], resolve),//
+                  meta: {
+                      keepAlive: false, // 不需要被缓存
+                      title: 'button'
+                  },
+              },
+         /*     /!*404页面需要放在最下面*!/
+              {
+                  path: '*',
+                  component: resolve => require(['@/pages/error/404.vue'], resolve),//
+                  meta: {
+                      keepAlive: false, // 不需要被缓存
+                      title: '404'
+                  },
+              },*/
           ]
       }
 
