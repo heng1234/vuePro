@@ -7,7 +7,19 @@
     <router-view/>
   </div>
 </template>
-
+<script>
+  export default {
+    name: 'App',
+    /**
+     * 监听浏览器刷新
+     */
+    beforeCreate(){
+   /*   this.$router.push({
+      })*/
+   /*window.location = "https://heng1234.github.io/vuePro/hlvy/"*/
+    }
+  }
+</script>
 <style lang="scss">
   /*引入无须编译的css文件*/
   @import './assets/css/oscss.css';
