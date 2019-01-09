@@ -104,7 +104,7 @@
                         title: 'highcharts'
                     },
                     {
-                        icon: 'iconfont el-icon-rank',
+                        icon: 'iconfont hlvy-icon-wenzhangguanliicon-',
                         index: 'echarts',
                         title: 'echarts'
                     },
