@@ -160,6 +160,8 @@ Vue.directive('focus', {
 import zh_CN from 'vee-validate/dist/locale/zh_CN';
 import VeeValidate,{Validator} from 'vee-validate';
 import VueI18n from 'vue-i18n';
+// 使用vee-validate（会报冲突， 因为elmentui中fields属性已使用）
+
 Vue.use(VueI18n)
 const i18n = new VueI18n({
     locale: 'zh_CN',//中文
@@ -185,7 +187,9 @@ Vue.use(VeeValidate, {
     i18nRootKey: 'validation',
     dictionary: {
         zh_CN
-    }
+    },
+    errorBagName: 'errorBags', // change if property conflicts.
+    fieldsBagName: 'fieldBags',
 });
 
 
