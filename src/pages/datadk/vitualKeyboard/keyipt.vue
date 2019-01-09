@@ -483,7 +483,7 @@ input[type="button"] {
   width: 708px;
   height: 310px;
   margin: 0;
-    right: -8.52rem;
+    right: -7.52rem;
     top: 1.6rem;
   padding: 10px;
   z-index: 2018;

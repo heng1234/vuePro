@@ -1,0 +1,13 @@
+[master b9a7df3] 版本webpack-dev-server3.1.10b=
+ 12 files changed, 168 insertions(+), 1 deletion(-)
+ create mode 100644 src/assets/images/error/404.png
+ create mode 100644 src/assets/images/error/500.png
+ create mode 100644 src/components/chart.vue
+ create mode 100644 src/pages/echarts/echarts.vue
+ create mode 100644 src/pages/echarts/js/china.js
+ create mode 100644 src/pages/echarts/js/echarts.min.js
+ create mode 100644 src/pages/echarts/js/map-option.js
+ create mode 100644 src/pages/echarts/js/vue.min.js
+ create mode 100644 src/pages/error/500.vue
+ create mode 100644 src/pages/highcharts/highcharts.vue
+ create mode 100644 src/pages/veevalidate/VeeValidate.vue
