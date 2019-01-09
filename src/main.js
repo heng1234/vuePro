@@ -6,6 +6,9 @@ import hlvyLoading from '@/components/hlvyLoading.vue'
 import  'lib-flexible'//自适应插件
 import '@/assets/icon/iconfont.css';
 import '@/assets/icon/demo.css';
+// 引入echarts
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts
 /*分页页码*/
 import pagination from '@/components/pagination.vue';
 /*标题*/
@@ -150,6 +153,42 @@ Vue.directive('focus', {
         el.focus()
     }
 })
+/*
+ validate校验插件
+ */
+//引入中文包，提示信息可以以中文形式显示
+import zh_CN from 'vee-validate/dist/locale/zh_CN';
+import VeeValidate,{Validator} from 'vee-validate';
+import VueI18n from 'vue-i18n';
+Vue.use(VueI18n)
+const i18n = new VueI18n({
+    locale: 'zh_CN',//中文
+})
+
+Validator.extend('truthy', {
+    getMessage: field => 'The ' + field + ' value is not truthy.',
+    validate: value => !! value
+});
+
+let instance = new Validator({ trueField: 'truthy' });
+
+// Also there is an instance 'extend' method for convenience.
+instance.extend('falsy', (value) => ! value);
+
+instance.attach({
+    name: 'falseField',
+    rules: 'falsy'
+});
+
+Vue.use(VeeValidate, {
+    i18n,
+    i18nRootKey: 'validation',
+    dictionary: {
+        zh_CN
+    }
+});
+
+
 new Vue({
   router,
   store,

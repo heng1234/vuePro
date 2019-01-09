@@ -1,7 +1,7 @@
 <template>
     <div style="position: relative">
             <hlvy-title :text="'404'" :icon="'iconfont hlvy-icon-xueyuanguanliicon-'"></hlvy-title>
-        <img style="width: 100%;height: 100%;" src="../../assets/images/error/404.png">
+        <img style="width: 100%;height: 100%;" src="../../assets/images/error/500.png">
         <button class="btn" @click="toHome">返回首页</button>
 
     </div>

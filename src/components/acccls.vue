@@ -69,6 +69,10 @@
                                 index: 'btn',
                                 title: 'button'
                             },
+                           /* {
+                                index: 'VeeValidate',
+                                title: 'VeeValidate校验'
+                            },*/
                             {
                                 index: '3-2',
                                 title: '三级菜单',
@@ -96,13 +100,13 @@
                     },
                     {
                         icon: 'iconfont hlvy-icon-chuqinpingjiaicon-',
-                        index: 'charts',
-                        title: 'schart图表'
+                        index: 'highcharts',
+                        title: 'highcharts'
                     },
                     {
                         icon: 'iconfont el-icon-rank',
-                        index: 'drag',
-                        title: '拖拽列表'
+                        index: 'echarts',
+                        title: 'echarts'
                     },
                     {
                         icon: 'iconfont hlvy-icon-fangjiashenqingicon-',

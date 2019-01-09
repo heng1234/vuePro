@@ -99,11 +99,43 @@ export default new Router({
                   },
               },
               {
+                  path: '/500',
+                  component: resolve => require(['@/pages/error/500.vue'], resolve),//
+                  meta: {
+                      keepAlive: false, // 不需要被缓存
+                      title: '500'
+                  },
+              },
+              {
                   path: '/btn',
                   component: resolve => require(['@/pages/button/btn.vue'], resolve),//
                   meta: {
                       keepAlive: false, // 不需要被缓存
                       title: 'button'
+                  },
+              },
+              {
+                  path: '/highcharts',
+                  component: resolve => require(['@/pages/highcharts/highcharts.vue'], resolve),//
+                  meta: {
+                      keepAlive: false, // 不需要被缓存
+                      title: 'highcharts'
+                  },
+              },
+              {
+                  path: '/echarts',
+                  component: resolve => require(['@/pages/echarts/echarts.vue'], resolve),//
+                  meta: {
+                      keepAlive: false, // 不需要被缓存
+                      title: 'echarts'
+                  },
+              },
+              {
+                  path: '/VeeValidate',
+                  component: resolve => require(['@/pages/veevalidate/VeeValidate.vue'], resolve),//
+                  meta: {
+                      keepAlive: false, // 不需要被缓存
+                      title: 'VeeValidate校验'
                   },
               },
          /*     /!*404页面需要放在最下面*!/
