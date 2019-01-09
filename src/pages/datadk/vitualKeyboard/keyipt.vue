@@ -96,7 +96,7 @@ import _dictionary  from "./dictionary.js";
 export default {
   components: {},
   props: {
-    placeholder: { type: String, default: "点击出中英文键盘" },
+    placeholder: { type: String, default: "按shift中英文切换" },
     topPx: { type: String, default: "100px" },
     leftPx: { type: String, default: "100px" },
     textValue: { type: String, default: "" },
@@ -414,6 +414,7 @@ export default {
   font-size: 22px;
   background-color: rgb(247, 247, 247);
   text-indent: 16px;
+    color:#409EFF;
   position: relative;
   box-sizing: border-box;
 }

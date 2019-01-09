@@ -68,7 +68,7 @@
         data() {
             return {
                 keyboardText: "",
-                value:''
+                value:'按shift切换中英文'
             }
         },
  methods:{

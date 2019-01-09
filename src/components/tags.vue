@@ -18,6 +18,7 @@
                     <el-dropdown-item command="all">关闭所有</el-dropdown-item>
                 </el-dropdown-menu>
             </el-dropdown>
+
         </div>
     </div>
 </template>
@@ -99,7 +100,6 @@
 <style >
     .tags {
         position: relative;
-        height: 30px;
         overflow: hidden;
         background: #fff;
         padding-right: 120px;
