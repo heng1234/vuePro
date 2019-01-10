@@ -138,6 +138,22 @@ export default new Router({
                       title: 'VeeValidate校验'
                   },
               },
+              {
+                  path: '/baiduMap',
+                  component: resolve => require(['@/pages/map/baiduMap.vue'], resolve),//
+                  meta: {
+                      keepAlive: false, // 不需要被缓存
+                      title: '百度地图'
+                  },
+              },
+              {
+                  path: '/gaodeMap',
+                  component: resolve => require(['@/pages/map/gaodeMap.vue'], resolve),//
+                  meta: {
+                      keepAlive: false, // 不需要被缓存
+                      title: '高德地图'
+                  },
+              },
          /*     /!*404页面需要放在最下面*!/
               {
                   path: '*',

@@ -109,6 +109,21 @@
                         title: 'echarts'
                     },
                     {
+                        icon: 'iconfont hlvy-icon-jiaowu',
+                        index: '',
+                        title: '地图',
+                        subs: [
+                            {
+                                index: 'baiduMap',
+                                title: '百度地图'
+                            },
+                            {
+                                index: 'gaodeMap',
+                                title: '高德地图'
+                            }
+                        ]
+                    },
+                    {
                         icon: 'iconfont hlvy-icon-fangjiashenqingicon-',
                         index: '6',
                         title: '错误处理',
