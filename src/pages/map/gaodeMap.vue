@@ -93,13 +93,16 @@
         created() {
             this.loadScript();
         },
+        mounted(){
+
+        },
         methods: {
             submitAdd() {
                 console.log(this.curTit + this.curAddress)
                 console.log(this.r_lng + ',' + this.r_lat)
             },
             loadScript() {
-                loadingMap('gaod','fd4d53420cd27886c3c2950a94099243').then(() => {
+                loadingMap('gaode','fd4d53420cd27886c3c2950a94099243').then(() => {
                     this.initMap()
                 });
             },
@@ -122,18 +125,19 @@
                     this.r_lat = center.lat;
                     this.showPoi()
                 })
+
                 // //初始城市上海
-                // this.map.addEventListener("dragend", () => {
-                //   this.showPoi();
-                // });
-                // var opts = {
-                //   subdistrict: 1, //返回下一级行政区
-                //   showbiz: false //最后一级返回街道信息
-                // };
+               /* this.map.addEventListener("dragend", () => {
+                  this.showPoi();
+                });*/
+             /*   var opts = {
+                  subdistrict: 1, //返回下一级行政区
+                  showbiz: false //最后一级返回街道信息
+                };*/
                 this.map.plugin('AMap.Geolocation', () => {
                     this.geolocation = new AMap.Geolocation({
                         // 是否使用高精度定位，默认：true
-                        enableHighAccuracy: false,
+                        enableHighAccuracy: true,
                         // 设置定位超时时间，默认：无穷大
                         timeout: 1000,
                         // 定位按钮的停靠位置的偏移量，默认：Pixel(10, 20)
@@ -164,9 +168,9 @@
                 // this.geoLocation = new window.BMap.Geolocation();
                 this.getPos();
                 this.mapShow = true;
+
             },
             getPos() {
-
                 this.geolocation.getCurrentPosition((status, result) => {
                     if (result.status == 1 && result.info === "SUCCESS") {
                         this.resultAddress = result.formattedAddress;
@@ -243,6 +247,7 @@
                         // $(".ListPanel").append("<div class='empty-result'>待领取人达成</div>");
                     }
                 });
+
             },
             showList(list) {
                 // var reslt = ""

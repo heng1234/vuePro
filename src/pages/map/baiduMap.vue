@@ -14,7 +14,7 @@
         </div>
         <div class="pos-icon" v-if='mapShow'>
             <div class="obj">
-                <img src="img/cur.png">
+                <img src="./img/cur.png">
             </div>
         </div>
         <div id="mapPanel">
@@ -59,7 +59,7 @@
                     </li>
                 </ul>
                 <div class="empty" v-if='poiList.data.length==0'>
-                    <img src="img/empty.jpg" alt="">
+                    <img src="./img/empty.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -146,6 +146,7 @@
             getPos() {
                 let geoL = this.geoLocation;
                 geoL.getCurrentPosition((r) => {
+
                     if (geoL.getStatus() == BMAP_STATUS_SUCCESS) {
                         this.cur_city = r.address.city;
                         this.resetAutocomplete(this.cur_city);
