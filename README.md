@@ -1,5 +1,7 @@
 # hlvyvue
 
+在线演示地址:https://heng1234.github.io/vuePro/hlvy/
+
 ## Project setup
 ```
 npm install
