@@ -2,10 +2,12 @@
   <div class="page">
 
     <!--分页控件-->
-    <el-pagination
+
+  <el-pagination
       background
       layout="prev, pager, next,slot"
       @current-change="handleCurrentChange"
+      :page-size="pageSize"
       :current-page.sync="currPage"
       :total="sumCount">
       <span class="el-pagination__jump fontTwelve">

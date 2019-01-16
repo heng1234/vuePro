@@ -1,6 +1,6 @@
  <template>
     <div style="height: 100%;width: 100%;">
-        <div>
+    <!--    <div>
             <hlvy-title :text="'系统首页'" :icon="'iconfont hlvy-icon-xueyuanguanliicon-'"></hlvy-title>
         </div>
 
@@ -12,7 +12,7 @@
                 </div>
             </div>
 
-        </div>
+        </div>-->
 
     </div>
 </template>

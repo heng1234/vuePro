@@ -107,7 +107,7 @@
 </p>
              </hlvy-dia>
         <div class='pagination'>
-            <span class="pagination">当前共 {{sumCount}} 条信息，当前 {{sumCount}}/{{(Math.ceil(sumCount/pageSize)==0?1:Math.ceil(sumCount/pageSize))}}页</span>
+            <span class="pagination">当前共 {{sumCount}} 条信息，当前 {{currPage}}/{{(Math.ceil(sumCount/pageSize)==0?1:Math.ceil(sumCount/pageSize))}}页</span>
 
         </div>
         <p class="tablep">
@@ -128,7 +128,7 @@
             return {
                 currPage:1,//当前页码
                 pageSize: 7,//每页显示
-                sumCount:  0,//总数量
+                sumCount: 0,//总数量
                 tableData3:[],
                 multipleSelection: [],
                 name:'',
