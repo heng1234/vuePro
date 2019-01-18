@@ -154,6 +154,14 @@ export default new Router({
                       title: '高德地图'
                   },
               },
+              {
+                  path: '/author',
+                  component: resolve => require(['@/author/author.vue'], resolve),//
+                  meta: {
+                      keepAlive: false, // 不需要被缓存
+                      title: '作者信息'
+                  },
+              },
          /*     /!*404页面需要放在最下面*!/
               {
                   path: '*',

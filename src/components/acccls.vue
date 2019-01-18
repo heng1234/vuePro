@@ -137,7 +137,12 @@
                                 title: '404'
                             }
                         ]
-                    }
+                    },
+                    {
+                        icon: 'iconfont hlvy-icon-wenzhangguanliicon-',
+                        index: 'author',
+                        title: '作者信息'
+                    },
                 ]
             }
         },
