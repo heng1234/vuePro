@@ -12,7 +12,7 @@
         项目地址:<a href="https://github.com/heng1234/vuePro">https://github.com/heng1234/vuePro</a>
         </p><br>
         <p>
-            交流群:553997290
+        交流群:553997290
         </p>
         </div>
     </div>
