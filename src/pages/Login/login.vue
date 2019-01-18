@@ -40,8 +40,8 @@
                 loginHeight:'100%',
                 loginWidth:'100%',
                 dynamicValidateForm: {
-                    loginName: '',
-                    loginPwd:'',
+                    loginName: 'hlvy',
+                    loginPwd:'hlvy',
                     checked:true
                 },
                 loadingShow:false,
