@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="homediv">
-                <span class="spanmoney"><span>总销售额:</span><p>&yen;5201314</p></span>
+                <span class="spanmoney"><span>年销售额:</span><p>&yen;5201314</p></span>
                 <div class="hnextdiv">
                     <span>
                     <el-progress type="circle" width="79" :percentage="70"></el-progress>
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="homediv">
-                <span class="spanmoney"><span>总销售额:</span><p>&yen;5201314</p></span>
+                <span class="spanmoney"><span>月销售额:</span><p>&yen;5201314</p></span>
                 <div class="hnextdiv">
                     <span>
                     <el-progress type="circle" width="79" :percentage="70"></el-progress>
@@ -54,7 +54,7 @@
                 </div>
             </div>
             <div class="homediv">
-                <span class="spanmoney"><span>总销售额:</span><p>&yen;5201314</p></span>
+                <span class="spanmoney"><span>周销售额:</span><p>&yen;5201314</p></span>
                 <div class="hnextdiv">
                     <span>
                     <el-progress type="circle" width="79" :percentage="70"></el-progress>

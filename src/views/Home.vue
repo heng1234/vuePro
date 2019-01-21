@@ -70,6 +70,9 @@
               </el-main>
           </el-container>
 
+          <a target="_blank" style="position: fixed;z-index: 999999;color: #3a8ee6;left: 97%;top: 40%;" href="https://jq.qq.com/?_wv=1027&k=5Wv4Y8x">
+          <img style="width: 30px;height: 30px;"  target="_blank" src="../assets/images/qq.png" alt="点击加入全栈交流群" title="全栈交流群">
+          </a>
 
   </div>
 </template>
