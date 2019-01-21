@@ -2,6 +2,11 @@
 
 在线演示地址:https://heng1234.github.io/vuePro/hlvy/
 
+
+页面效果:
+![图1]https://github.com/heng1234/vuePro/blob/master/src/img/1.png
+
+
 ## Project setup
 ```
 npm install
