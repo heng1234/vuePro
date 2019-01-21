@@ -4,7 +4,7 @@
 
 
 页面效果:
-![图1]https://github.com/heng1234/vuePro/blob/master/src/img/1.png
+![图1](https://github.com/heng1234/vuePro/blob/master/src/img/1.png)
 
 
 ## Project setup
