@@ -155,6 +155,14 @@ export default new Router({
                   },
               },
               {
+                  path: '/tolist',
+                  component: resolve => require(['@/pages/tolist/tolist.vue'], resolve),//
+                  meta: {
+                      keepAlive: false, // 不需要被缓存
+                      title: 'tolist'
+                  },
+              },
+              {
                   path: '/author',
                   component: resolve => require(['@/author/author.vue'], resolve),//
                   meta: {

@@ -69,6 +69,10 @@
                                 index: 'btn',
                                 title: 'button'
                             },
+                            {
+                                index: 'tolist',
+                                title: 'tolist'
+                            },
                            /* {
                                 index: 'VeeValidate',
                                 title: 'VeeValidate校验'
