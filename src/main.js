@@ -2,8 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import hlvyLoading from '@/components/hlvyLoading.vue'
 import  'lib-flexible'//自适应插件
+import hlvyLoading from '@/components/hlvyLoading.vue'
+
 import '@/assets/icon/iconfont.css';
 import '@/assets/icon/demo.css';
 // 引入echarts
