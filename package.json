@@ -10,7 +10,7 @@
     "axios": "^0.18.0",
     "echarts": "^4.2.0-rc.2",
     "element-ui": "^2.4.11",
-    "highcharts": "^7.0.1",
+    "highcharts": "^7.2.2",
     "less": "^2.7.3",
     "less-loader": "^4.1.0",
     "lib-flexible": "^0.3.2",
